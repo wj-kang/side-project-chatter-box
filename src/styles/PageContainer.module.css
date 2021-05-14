@@ -13,4 +13,6 @@
   height: 100%;
   max-width: 75rem;
   min-width: 21rem;
+  display: flex;
+  justify-content: center;
 }

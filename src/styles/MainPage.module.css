@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  padding-bottom: 10rem;
 }
 
 .title {
@@ -84,7 +86,7 @@
 }
 
 .input_container.copied {
-  background-image: linear-gradient(to left, #bbffd031 -20%, #00cff931 100%);
+  background-image: linear-gradient(to left, #bbffd052 0%, #0090ad4d 100%);
 }
 
 .input {
@@ -122,8 +124,9 @@
 .link_btn.copied {
   -webkit-animation: shake-vertical 0.8s ease-in 0.5;
   animation: shake-vertical 0.8s ease-in 0.5;
-  background-color: #0c5764;
+  background-color: #0c5764da;
   opacity: 0.8;
+
   color: white;
 }
 
