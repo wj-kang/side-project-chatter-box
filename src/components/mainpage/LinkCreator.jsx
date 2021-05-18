@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { nanoid } from 'nanoid';
-import styles from '../styles/MainPage.module.css';
+import { useHistory } from 'react-router-dom';
+import styles from '../../styles/MainPage.module.css';
 
-const LinkCreator = () => {
+const LinkCreator = ({ dbService }) => {
+  const history = useHistory();
   const [created, setCreated] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [link, setLink] = useState('');
+  const [roomId, setRoomId] = useState('');
 
   const handleCreateRoom = () => {
-    setLink(`chatterbox.io/room/${nanoid(12)}`);
-    setCreated((prev) => !prev);
+    dbService.createNewChat(setRoomId, setCreated);
   };
 
   const handleCopyLink = () => {
@@ -20,8 +20,7 @@ const LinkCreator = () => {
   };
 
   const handleGoToLink = () => {
-    console.log('push!');
-    // history.push(link);
+    history.push(`/room/${roomId}`);
   };
 
   return (
@@ -35,7 +34,7 @@ const LinkCreator = () => {
           className={`${styles.input_container} ${copied && styles.copied}`}
           onClick={copied ? handleGoToLink : handleCopyLink}
         >
-          <input id="link" type="text" className={styles.input} value={link} />
+          <input id="link" type="text" className={styles.input} value={`chatterbox.io/room/${roomId}`} />
         </div>
         <button className={`${styles.link_btn} ${copied && styles.copied}`} onClick={handleCopyLink}>
           {copied ? 'Copied' : 'Copy'}

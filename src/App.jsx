@@ -28,7 +28,7 @@ function App({ authService, dbService }) {
           <Route //
             exact
             path="/"
-            children={<MainPage />}
+            children={<MainPage dbService={dbService} />}
           />
           <Route //
             path="/room/:roomId"
