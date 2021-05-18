@@ -9,24 +9,23 @@ const RoomPageRender = ({ dbService, uid }) => {
   const [roomsInfo, setRoomsInfo] = useState(null);
   const [usersInfo, setusersInfo] = useState(null);
 
+  const handleJoinChat = (nickname) => {
+    dbService.joinToChat(uid, roomId, nickname);
+  };
+
   useEffect(() => {
-    // console.log('* roomId: ', roomId);
     const handleRoomInfo = (value) => {
       setRoomsInfo(value);
-      // console.log('*** roomsInfo: ', value);
     };
     dbService.syncRoomsInfo(roomId, handleRoomInfo);
   }, []);
 
   useEffect(() => {
-    // console.log('* uid: ', uid);
     if (uid !== null) {
       const handleUsersInfo = (value) => {
         setusersInfo(value);
-        // console.log('*** usersInfo: ', value);
       };
-
-      // get user's rooms info, and callback function to setState
+      // get user's rooms info, and callback setState
       dbService.syncUsersInfo(uid, handleUsersInfo);
     }
   }, [uid]);
@@ -36,9 +35,17 @@ const RoomPageRender = ({ dbService, uid }) => {
       {!roomsInfo ? (
         <PageNotFound />
       ) : usersInfo?.[roomId] ? (
-        <ChatPage dbService={dbService} uid={uid} roomId={roomId} />
+        <ChatPage //
+          dbService={dbService}
+          uid={uid}
+          roomId={roomId}
+          roomsInfo={roomsInfo}
+        />
       ) : (
-        <WaitPage handleJoinChat={() => console.log('asdf')} />
+        <WaitPage //
+          handleJoinChat={handleJoinChat}
+          userCount={roomsInfo.userCount}
+        />
       )}
     </>
   );

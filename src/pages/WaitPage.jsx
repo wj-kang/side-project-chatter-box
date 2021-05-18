@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/WaitPage.module.css';
 
-const WaitPage = ({ handleJoinChat }) => {
+const WaitPage = ({ handleJoinChat, userCount }) => {
   const [isValid, setIsValid] = useState(false);
-  const [input, setInput] = useState('');
+  const [nickname, setNickname] = useState('');
 
   const handleChangeInput = ({ target: { value } }) => {
-    setInput(value);
+    setNickname(value);
     setIsValid(value.length > 0 ? true : false);
   };
 
@@ -20,15 +20,18 @@ const WaitPage = ({ handleJoinChat }) => {
       <h3 className={styles.desc}>Enjoy truly simple open-chat</h3>
 
       <div className={styles.center_container}>
-        <div className={styles.user_count}>Users : 0</div>
+        <div className={styles.user_count}>{`Users : ${userCount}`}</div>
         <input
           className={styles.input}
           type="text"
           placeholder="Enter your nickname"
-          value={input}
+          value={nickname}
           onChange={handleChangeInput}
         />
-        <button className={`${styles.join_btn} ${isValid && styles.isValid}`} onClick={isValid ? handleJoinChat : null}>
+        <button
+          className={`${styles.join_btn} ${isValid && styles.isValid}`}
+          onClick={isValid ? () => handleJoinChat(nickname) : null}
+        >
           Join the Chat
         </button>
       </div>
