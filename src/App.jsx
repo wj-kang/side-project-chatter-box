@@ -1,30 +1,49 @@
-import { Switch, Route, Link, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import PageContainer from './components/PageContainer';
 import MainPage from './pages/MainPage';
-import WaitPage from './pages/WaitPage';
+import RoomPageRender from './pages/RoomPageRender';
+import PageNotFound from './pages/PageNotFound';
 
-function App() {
+function App({ authService, dbService }) {
+  const [uid, setUid] = useState(null);
+
+  useEffect(() => {
+    // auth check, if no context then create guest auth
+    authService.onAuthChange((context) => {
+      if (context == null) {
+        authService //
+          .guest()
+          .then((data) => setUid(data.user.uid));
+      } else {
+        setUid(context.uid);
+      }
+    });
+  }, []);
+
   return (
     <>
       <PageContainer>
         <Switch>
-          <Route path="/main" children={<MainPage />} />
-          <Route path="/wait" children={<WaitPage handleJoinChat={() => console.log('asdf')} />} />
-          <Route path="/room/:roomId" children={<></>} />
+          <Route //
+            exact
+            path="/"
+            children={<MainPage />}
+          />
+          <Route //
+            path="/room/:roomId"
+            children={
+              <RoomPageRender //
+                uid={uid}
+                dbService={dbService}
+              />
+            }
+          />
           <PageNotFound />
         </Switch>
       </PageContainer>
     </>
   );
-}
-
-// function Temp() {
-//   const { roomId } = useParams();
-//   return <h3>{roomId}</h3>;
-// }
-
-function PageNotFound() {
-  return <h3>404!</h3>;
 }
 
 export default App;

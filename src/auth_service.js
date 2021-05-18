@@ -1,7 +1,7 @@
 import { firebaseAuth } from './firebase';
 
 class AuthService {
-  guset() {
+  guest() {
     return firebaseAuth.signInAnonymously();
   }
 

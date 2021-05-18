@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
+import AuthService from './auth_service';
+import DbService from './db_service';
 import App from './App';
+import './index.css';
+
+// dependencies
+const authService = new AuthService();
+const dbService = new DbService();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <Router>
+    <App authService={authService} dbService={dbService} />
+  </Router>,
   document.getElementById('root')
 );
