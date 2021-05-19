@@ -73,12 +73,13 @@ class DbService {
     });
   }
 
-  newMessage(roomId, uid, msg) {
+  newMessage(roomId, uid, nickname, msg) {
     const newMsgRef = database.ref(`messages/${roomId}`).push();
     newMsgRef.set(
       {
         message: msg,
         sender: uid,
+        nickname,
         time: Date.now(),
       },
       (err) => {
@@ -87,6 +88,14 @@ class DbService {
         }
       }
     );
+  }
+
+  syncMessageData(roomId, cb) {
+    const ref = database.ref(`messages/${roomId}`);
+    ref.on('value', (snapshot) => {
+      const value = snapshot.val();
+      value && cb(value);
+    });
   }
 
   leaveRoom() {}
