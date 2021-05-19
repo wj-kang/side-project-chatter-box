@@ -9,9 +9,9 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
     <section className={styles.chatpage}>
       <div className={styles.left_section}>
         <div className={styles.left_nickname_container}>
-          <h3 className={styles.text_h3}>MyNickname</h3>
+          <h3 className={styles.text_h3}>{roomsInfo.users[uid].nickname}</h3>
         </div>
-        <UserList />
+        <UserList roomsInfo={roomsInfo} />
       </div>
       <div className={styles.right_section}>
         <div className={styles.right_top}>
