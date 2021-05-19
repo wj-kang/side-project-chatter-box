@@ -1,0 +1,246 @@
+.chatpage {
+  width: 100%;
+  max-width: 67.5rem;
+  margin: 3.5rem 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #0744293b;
+  padding: 1rem;
+
+  border-radius: 20px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+}
+
+.left_section {
+  flex: 0 0.6 auto;
+
+  width: 100%;
+  height: 100%;
+  max-width: 19.5rem;
+}
+
+.right_section {
+  flex: 0 0.4 auto;
+
+  width: 100%;
+  height: 100%;
+
+  margin-left: 1rem;
+  padding: 1rem 0;
+  border-radius: 12px;
+  background-color: #edf0f5;
+  opacity: 0.8;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text_h3 {
+  margin: 0;
+  font-size: 1.375rem;
+  letter-spacing: 0.6px;
+}
+
+/* LEFT SECTION */
+.left_nickname_container {
+  width: 100%;
+  height: 7rem;
+  border-radius: 12px;
+  background: rgba(0, 163, 137, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-weight: bold;
+}
+
+/* UserList.jsx */
+.left_userlist_container {
+  width: 100%;
+  max-height: 20rem;
+  margin-top: 0.5rem;
+
+  opacity: 0.8;
+  border-radius: 12px;
+  background-color: #edf0f5;
+  padding: 1rem 1rem 1rem 1rem;
+  color: #363636;
+  overflow-y: auto;
+}
+
+.left_userlist {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem;
+  border-top: 1px solid #d8d8d8;
+}
+
+.left_userlist_nickname {
+  margin: 0.6rem 0 0.4rem 0;
+}
+
+/* ************************** */
+/* RIGHT SECTION */
+.right_top {
+  height: 2.5rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #363636;
+}
+
+.right_top_btn {
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+}
+
+.right_top_btn:hover {
+  background: #dedede;
+  transform: scale(1.02);
+  opacity: 0.8;
+}
+
+/* ChatContainer.jsx */
+.right_messages_container {
+  width: 100%;
+  height: 100%;
+
+  margin-top: 1rem;
+  border-top: 1px solid #d8d8d8;
+  padding: 0 1rem;
+
+  overflow-y: auto;
+}
+
+.chat_list {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15rem;
+}
+
+.chat_nickname {
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  color: #636363;
+  font-weight: bold;
+}
+
+.chat_left_bubble,
+.chat_right_bubble {
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  background-color: #ffffff;
+
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.chat_right_bubble {
+  background-color: #00a389;
+}
+
+.chat_left_text,
+.chat_right_text {
+  font-size: 1rem;
+  letter-spacing: 0.4px;
+  color: #636363;
+}
+
+.chat_right_text {
+  color: #ffffff;
+}
+
+.chat_time {
+  font-size: 0.625rem;
+  letter-spacing: 0.25px;
+  color: #636363;
+  margin: 0 0.4rem;
+}
+
+/* ChatBubbleLeft.jsx */
+.chat_left {
+  margin-top: 1rem;
+  width: 100%;
+  padding-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chat_left_bubble_container {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ChatBubbleRight.jsx */
+.chat_right {
+  margin-top: 1rem;
+  width: 100%;
+  padding-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.chat_right_bubble_container {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ChatInput.jsx */
+.rignt_input_container {
+  margin: 0.5rem 1rem 0 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  display: flex;
+
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 #aeaeae;
+  background-color: #ffffff;
+}
+
+.right_input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-family: Helvetica;
+}
+
+.right_input_btn {
+  margin-left: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  background-color: #00a389;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+}
+
+.right_input_btn:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+}
