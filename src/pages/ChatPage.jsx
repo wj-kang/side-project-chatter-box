@@ -6,7 +6,8 @@ import styles from '../styles/ChatPage.module.css';
 
 const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
   const handleNewMsg = (msg) => {
-    dbService.newMessage(roomId, uid, msg);
+    const nickname = roomsInfo.users[uid].nickname;
+    dbService.newMessage(roomId, uid, nickname, msg);
   };
 
   return (
@@ -19,10 +20,14 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
       </div>
       <div className={styles.right_section}>
         <div className={styles.right_top}>
-          <h3 className={styles.text_h3}>chatterbox.io/awerjiowjefkl123</h3>
+          <h3 className={styles.right_top_title}>{`Room #${roomId}`}</h3>
           <button className={styles.right_top_btn}>Leave</button>
         </div>
-        <ChatContainer />
+        <ChatContainer //
+          dbService={dbService}
+          uid={uid}
+          roomId={roomId}
+        />
         <ChatInput handleNewMsg={handleNewMsg} />
       </div>
     </section>
