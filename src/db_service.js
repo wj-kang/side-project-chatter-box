@@ -29,11 +29,18 @@ class DbService {
 
     // Otherwise, create new room Info
     const ref = await database.ref(`rooms/${roomId}`);
-    await ref.set({
-      createdAt: Date.now(),
-      users: null,
-      userCount: 0,
-    });
+    await ref.set(
+      {
+        createdAt: Date.now(),
+        users: null,
+        userCount: 0,
+      },
+      (err) => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
 
     // callback setState setRoomId, setCreated
     cb1(roomId);
@@ -42,20 +49,45 @@ class DbService {
 
   joinToChat(uid, roomId, nickname) {
     database.ref(`users/${uid}/${roomId}`).set(true);
-    database.ref(`rooms/${roomId}/users/${uid}`).set({
-      time: Date.now(),
-      status: true,
-      nickname,
-    });
+    database.ref(`rooms/${roomId}/users/${uid}`).set(
+      {
+        time: Date.now(),
+        status: true,
+        nickname,
+      },
+      (err) => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
 
     // increment user counter
     const countRef = database.ref(`rooms/${roomId}/userCount`);
     countRef.once('value', (snap) => {
-      countRef.set(snap.val() + 1);
+      countRef.set(snap.val() + 1, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
     });
   }
 
-  newMessage() {}
+  newMessage(roomId, uid, msg) {
+    const newMsgRef = database.ref(`messages/${roomId}`).push();
+    newMsgRef.set(
+      {
+        message: msg,
+        sender: uid,
+        time: Date.now(),
+      },
+      (err) => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
+  }
 
   leaveRoom() {}
 }

@@ -5,6 +5,10 @@ import UserList from '../components/chatpage/UserList';
 import styles from '../styles/ChatPage.module.css';
 
 const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
+  const handleNewMsg = (msg) => {
+    dbService.newMessage(roomId, uid, msg);
+  };
+
   return (
     <section className={styles.chatpage}>
       <div className={styles.left_section}>
@@ -19,7 +23,7 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
           <button className={styles.right_top_btn}>Leave</button>
         </div>
         <ChatContainer />
-        <ChatInput />
+        <ChatInput handleNewMsg={handleNewMsg} />
       </div>
     </section>
   );

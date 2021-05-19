@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from '../../styles/ChatPage.module.css';
 
-const ChatInput = () => {
+const ChatInput = ({ handleNewMsg }) => {
+  const textRef = useRef();
+  const [input, setInput] = useState('');
+
+  const handleInputChange = ({ target: { value } }) => {
+    setInput(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    handleNewMsg(input);
+    setInput('');
+    textRef.current.focus();
+  };
+
   return (
-    <div className={styles.rignt_input_container}>
-      <input className={styles.right_input} type="text" placeholder="Write message.." />
-      <button className={styles.right_input_btn}>Send</button>
-    </div>
+    <form className={styles.rignt_input_container}>
+      <input
+        className={styles.right_input}
+        type="text"
+        value={input}
+        ref={textRef}
+        onChange={handleInputChange}
+        placeholder="Write message.."
+      />
+
+      <button //
+        type="submit"
+        className={styles.right_input_btn}
+        onClick={handleSubmit}
+        onKeyDown={handleSubmit}
+      >
+        Send
+      </button>
+    </form>
   );
 };
 
