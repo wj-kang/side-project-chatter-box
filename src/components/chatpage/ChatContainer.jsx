@@ -17,7 +17,7 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
     const date = time.getDate();
     const hour = time.getHours();
     const min = time.getMinutes();
-    return `${month} ${date}, ${hour}:${min.length < 2 ? `0${min}` : min}`;
+    return `${month} ${date}, ${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
   };
 
   useEffect(() => {
