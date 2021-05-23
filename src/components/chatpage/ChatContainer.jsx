@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/ChatPage.module.css';
 import ChatBubbleLeft from './ChatBubbleLeft';
 import ChatBubbleRight from './ChatBubbleRight';
@@ -20,12 +20,22 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
     return `${month} ${date}, ${hour < 10 ? '0' + hour : hour}:${min < 10 ? '0' + min : min}`;
   };
 
+  const chatContainer = useRef();
+  const scrollToBottom = () => {
+    const scrollValue = chatContainer.current.scrollHeight - chatContainer.current.clientHeight;
+    chatContainer.current.scrollTo(0, scrollValue);
+  };
+
   useEffect(() => {
     syncMsgData();
   }, []);
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [msgs]);
+
   return (
-    <div className={styles.right_messages_container}>
+    <div ref={chatContainer} className={styles.right_messages_container}>
       <ul className={styles.chat_list}>
         {msgs &&
           msgs.map((msg) => {
