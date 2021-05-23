@@ -10,6 +10,10 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
     dbService.newMessage(roomId, uid, nickname, msg);
   };
 
+  const handleLeaveChat = () => {
+    dbService.leaveRoom(roomId, uid);
+  };
+
   return (
     <section className={styles.chatpage}>
       <div className={styles.left_section}>
@@ -21,7 +25,12 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
       <div className={styles.right_section}>
         <div className={styles.right_top}>
           <h3 className={styles.right_top_title}>{`Room #${roomId}`}</h3>
-          <button className={styles.right_top_btn}>Leave</button>
+          <button //
+            className={styles.right_top_btn}
+            onClick={handleLeaveChat}
+          >
+            Leave
+          </button>
         </div>
         <ChatContainer //
           dbService={dbService}
