@@ -14,7 +14,7 @@ const WaitPage = ({ handleJoinChat, userCount }) => {
   return (
     <section className={styles.wait}>
       <Link className={styles.gotohome} to="/">
-        Go to Home
+        {`< Home`}
       </Link>
       <h1 className={styles.title}>ChatterBox is ready!</h1>
       <h3 className={styles.desc}>Enjoy truly simple open-chat</h3>

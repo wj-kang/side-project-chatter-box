@@ -12,9 +12,13 @@
 
 .gotohome {
   width: 100%;
-  text-align: end;
+  text-align: start;
   margin-bottom: 5rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.gotohome:hover {
+  opacity: 0.7;
 }
 
 .title {
