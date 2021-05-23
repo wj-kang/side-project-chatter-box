@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/ChatPage.module.css';
+import ChatAnnouncement from './ChatAnnouncement';
 import ChatBubbleLeft from './ChatBubbleLeft';
 import ChatBubbleRight from './ChatBubbleRight';
 
@@ -40,7 +41,11 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
         {msgs &&
           msgs.map((msg) => {
             const { message, sender, time, nickname } = msg;
-            if (sender === uid) {
+            if (sender === 'join') {
+              return <ChatAnnouncement nickname={nickname} type="join" />;
+            } else if (sender === 'leave') {
+              return <ChatAnnouncement nickname={nickname} type="leave" />;
+            } else if (sender === uid) {
               return (
                 <ChatBubbleRight //
                   msg={message}

@@ -26,7 +26,7 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
   };
 
   const handleLeaveChat = () => {
-    dbService.leaveRoom(roomId, uid);
+    dbService.leaveRoom(roomId, uid, roomsInfo.users[uid].nickname);
   };
 
   return (

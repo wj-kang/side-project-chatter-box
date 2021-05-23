@@ -11,6 +11,13 @@ const WaitPage = ({ handleJoinChat, userCount }) => {
     setIsValid(value.length > 0 ? true : false);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!isValid) return;
+
+    handleJoinChat(nickname);
+  };
+
   return (
     <section className={styles.wait}>
       <div className={styles.gohome_container}>
@@ -21,7 +28,7 @@ const WaitPage = ({ handleJoinChat, userCount }) => {
       <h1 className={styles.title}>ChatterBox is ready!</h1>
       <h3 className={styles.desc}>Enjoy truly simple open-chat</h3>
 
-      <div className={styles.center_container}>
+      <form className={styles.center_container}>
         <div className={styles.user_count}>{`Users : ${userCount}`}</div>
         <input
           className={styles.input}
@@ -32,11 +39,12 @@ const WaitPage = ({ handleJoinChat, userCount }) => {
         />
         <button
           className={`${styles.join_btn} ${isValid && styles.isValid}`}
-          onClick={isValid ? () => handleJoinChat(nickname) : null}
+          onClick={handleSubmit}
+          onKeyDown={handleSubmit}
         >
           Join the Chat
         </button>
-      </div>
+      </form>
     </section>
   );
 };

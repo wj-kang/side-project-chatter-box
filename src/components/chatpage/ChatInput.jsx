@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/ChatPage.module.css';
 
 const ChatInput = ({ handleNewMsg }) => {
@@ -17,6 +17,10 @@ const ChatInput = ({ handleNewMsg }) => {
     setInput('');
     textRef.current.focus();
   };
+
+  useEffect(() => {
+    textRef.current.focus();
+  }, []);
 
   return (
     <form className={styles.rignt_input_container}>

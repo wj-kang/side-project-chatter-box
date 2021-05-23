@@ -79,6 +79,7 @@
 }
 
 /* LEFT SECTION */
+
 .left_nickname_container {
   width: 100%;
   height: 4.25rem;
@@ -270,6 +271,25 @@
 .chat_right_bubble_container {
   display: flex;
   align-items: flex-end;
+}
+
+/* ChatAnnouncement.jsx */
+.announcement {
+  display: flex;
+  justify-content: center;
+}
+.announcement_text_container {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  border-radius: 20px;
+  font-size: 0.825rem;
+  max-width: 15rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(0, 163, 137, 0.5);
+}
+.announcement_text {
+  color: #ffffff;
 }
 
 /* ChatInput.jsx */

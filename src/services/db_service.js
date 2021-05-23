@@ -48,6 +48,8 @@ class DbService {
   }
 
   joinToChat(uid, roomId, nickname) {
+    this.newMessage(roomId, 'join', nickname);
+
     database.ref(`users/${uid}/${roomId}`).set(true);
     database.ref(`rooms/${roomId}/users/${uid}`).set(
       {
@@ -73,7 +75,7 @@ class DbService {
     });
   }
 
-  newMessage(roomId, uid, nickname, msg) {
+  newMessage(roomId, uid, nickname, msg = ' ') {
     const newMsgRef = database.ref(`messages/${roomId}`).push();
     newMsgRef.set(
       {
@@ -109,7 +111,9 @@ class DbService {
     });
   }
 
-  leaveRoom(roomId, uid) {
+  leaveRoom(roomId, uid, nickname) {
+    this.newMessage(roomId, 'leave', nickname);
+
     database.ref(`users/${uid}/${roomId}`).set(false);
     database.ref(`rooms/${roomId}/users/${uid}/status`).set(false);
 
