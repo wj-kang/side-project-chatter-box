@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import AuthService from './auth_service';
-import DbService from './db_service';
+import AuthService from './services/auth_service';
+import DbService from './services/db_service';
 import App from './App';
 import './index.css';
 

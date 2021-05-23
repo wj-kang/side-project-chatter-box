@@ -1,4 +1,4 @@
-import { database } from './firebase';
+import { database } from '../firebase';
 import { nanoid } from 'nanoid';
 
 class DbService {
@@ -90,14 +90,37 @@ class DbService {
     );
   }
 
-  syncMessageData(roomId, cb) {
-    const ref = database.ref(`messages/${roomId}`);
-    ref.on('value', (snapshot) => {
-      const value = snapshot.val();
-      value && cb(value);
+  syncMessageData(roomId, uid, cb) {
+    let timeFrom;
+    database.ref(`rooms/${roomId}/users/${uid}/time`).once('value', (snapshot) => (timeFrom = snapshot.val()));
+
+    const msgRef = database.ref(`messages/${roomId}`);
+    msgRef.on('value', (snapshot) => {
+      const messages = snapshot.val();
+      if (messages) {
+        const res = Object.keys(messages) //
+          .filter((mid) => {
+            return messages[mid].time > timeFrom;
+          })
+          .map((mid) => messages[mid]);
+
+        cb(res);
+      }
     });
   }
 
-  leaveRoom() {}
+  leaveRoom(roomId, uid) {
+    database.ref(`users/${uid}/${roomId}`).set(false);
+    database.ref(`rooms/${roomId}/users/${uid}/status`).set(false);
+
+    const countRef = database.ref(`rooms/${roomId}/userCount`);
+    countRef.once('value', (snap) => {
+      countRef.set(snap.val() - 1, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
+    });
+  }
 }
 export default DbService;
