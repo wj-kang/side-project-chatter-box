@@ -5,6 +5,7 @@ import AuthService from './services/auth_service';
 import DbService from './services/db_service';
 import App from './App';
 import './index.css';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 // dependencies
 const authService = new AuthService();

@@ -15,6 +15,29 @@
   background-color: #ffffff;
 }
 
+.hiddenlink {
+  position: fixed;
+  z-index: -1;
+}
+
+.pop_msg {
+  background: #363636;
+  border-radius: 8px;
+  color: white;
+  top: -0.4rem;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: fixed;
+  padding: 0.6rem 0.8rem;
+
+  transition: all 250ms ease-in-out;
+}
+
+.pop_msg.on {
+  top: 0.6rem;
+  opacity: 0.4;
+}
+
 .left_section {
   flex: 0 0.6 auto;
 
@@ -51,14 +74,17 @@
 
   overflow-x: hidden;
   text-overflow: ellipsis;
+
+  pointer-events: none;
 }
 
 /* LEFT SECTION */
 .left_nickname_container {
   width: 100%;
-  height: 7rem;
+  height: 4.25rem;
   border-radius: 12px;
   background: rgba(0, 163, 137, 0.7);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   padding: 0 1rem;
 
   display: flex;
@@ -109,13 +135,35 @@
   color: #363636;
 }
 
+.right_top_title_container {
+  display: flex;
+  align-items: center;
+}
+
 .right_top_title {
   margin: 0;
   font-size: 1.125rem;
   letter-spacing: 0.6px;
 }
 
-.right_top_btn {
+.right_top_linkcopy {
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  color: #363636;
+  padding: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 150ms ease-in;
+}
+
+.right_top_linkcopy:hover {
+  opacity: 0.8;
+}
+
+.right_top_leave {
+  margin-left: 1.5rem;
   outline: none;
   border: none;
   background: none;
@@ -127,7 +175,7 @@
   transition: all 150ms ease-in;
 }
 
-.right_top_btn:hover {
+.right_top_leave:hover {
   background: #dedede;
   transform: scale(1.02);
   opacity: 0.8;

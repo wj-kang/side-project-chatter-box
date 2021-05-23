@@ -34,7 +34,12 @@ const LinkCreator = ({ dbService }) => {
           className={`${styles.input_container} ${copied && styles.copied}`}
           onClick={copied ? handleGoToLink : handleCopyLink}
         >
-          <input id="link" type="text" className={styles.input} value={`chatterbox.io/room/${roomId}`} />
+          <input
+            id="link"
+            type="text"
+            className={styles.input}
+            value={`${process.env.REACT_APP_BASE_URL}/room/${roomId}`}
+          />
         </div>
         <button className={`${styles.link_btn} ${copied && styles.copied}`} onClick={handleCopyLink}>
           {copied ? 'Copied' : 'Copy'}
