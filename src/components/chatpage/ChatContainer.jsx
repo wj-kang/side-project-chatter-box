@@ -7,7 +7,17 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
   const [msgs, setMsgs] = useState(null);
 
   const syncMsgData = () => {
-    dbService.syncMessageData(roomId, setMsgs);
+    dbService.syncMessageData(roomId, uid, setMsgs);
+  };
+
+  const timeConvert = (timestamp) => {
+    const time = new Date(timestamp);
+    const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const month = MONTH[time.getMonth()];
+    const date = time.getDate();
+    const hour = time.getHours();
+    const min = time.getMinutes();
+    return `${month} ${date}, ${hour}:${min.length < 2 ? `0${min}` : min}`;
   };
 
   useEffect(() => {
@@ -18,13 +28,13 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
     <div className={styles.right_messages_container}>
       <ul className={styles.chat_list}>
         {msgs &&
-          Object.keys(msgs).map((id) => {
-            const { message, sender, time, nickname } = msgs[id];
+          msgs.map((msg) => {
+            const { message, sender, time, nickname } = msg;
             if (sender === uid) {
               return (
                 <ChatBubbleRight //
                   msg={message}
-                  time={time}
+                  time={timeConvert(time)}
                 />
               );
             } else {
@@ -32,7 +42,7 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
                 <ChatBubbleLeft //
                   nickname={nickname}
                   msg={message}
-                  time={time}
+                  time={timeConvert(time)}
                 />
               );
             }
