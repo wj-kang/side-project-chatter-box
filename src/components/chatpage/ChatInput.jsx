@@ -11,6 +11,7 @@ const ChatInput = ({ handleNewMsg }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input.length < 1) return;
 
     handleNewMsg(input);
     setInput('');
