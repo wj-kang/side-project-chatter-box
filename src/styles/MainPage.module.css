@@ -6,7 +6,25 @@
   align-items: center;
   flex-direction: column;
 
-  padding-bottom: 10rem;
+  padding-bottom: 8rem;
+}
+
+.pop_msg {
+  background: #363636;
+  border-radius: 8px;
+  color: white;
+  bottom: -0.4rem;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: fixed;
+  padding: 0.6rem 0.8rem;
+
+  transition: all 250ms ease-in-out;
+}
+
+.pop_msg.on {
+  bottom: 5rem;
+  opacity: 0.4;
 }
 
 .title {
@@ -27,7 +45,7 @@
 
 .section_container {
   position: relative;
-  width: 90%;
+  width: 85%;
   max-width: 30rem;
   margin: 2.5rem 0 1rem 0;
   display: flex;
@@ -83,10 +101,13 @@
   border: solid 1px #ffffff;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+  transition: all 200ms ease-in;
 }
 
 .input_container.copied {
-  background-image: linear-gradient(to left, #bbffd052 0%, #0090ad4d 100%);
+  border-color: #0c576470;
+  /* background-image: linear-gradient(to left, #bbffd052 0%, #0090ad4d 100%); */
 }
 
 .input {
@@ -137,6 +158,10 @@
 }
 
 @media screen and (max-width: 30rem) {
+  .main {
+    padding-bottom: 5rem;
+  }
+
   .title {
     font-size: 3rem;
   }

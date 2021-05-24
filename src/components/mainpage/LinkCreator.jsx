@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from '../../styles/MainPage.module.css';
 
-const LinkCreator = ({ dbService }) => {
+const LinkCreator = ({ dbService, setPopMsg }) => {
   const history = useHistory();
   const [created, setCreated] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -16,6 +16,12 @@ const LinkCreator = ({ dbService }) => {
     document.getElementById('link').select();
     document.execCommand('copy');
     document.getElementById('link').blur();
+
+    setPopMsg(true);
+    setTimeout(() => {
+      setPopMsg(false);
+    }, 3000);
+
     setCopied(true);
   };
 
@@ -41,9 +47,15 @@ const LinkCreator = ({ dbService }) => {
             value={`${process.env.REACT_APP_BASE_URL}/room/${roomId}`}
           />
         </div>
-        <button className={`${styles.link_btn} ${copied && styles.copied}`} onClick={handleCopyLink}>
-          {copied ? 'Copied' : 'Copy'}
-        </button>
+        {copied ? (
+          <button className={`${styles.link_btn} ${copied && styles.copied}`} onClick={handleGoToLink}>
+            Join
+          </button>
+        ) : (
+          <button className={`${styles.link_btn}`} onClick={handleCopyLink}>
+            Copy
+          </button>
+        )}
       </div>
     </div>
   );
