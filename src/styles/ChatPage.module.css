@@ -1,7 +1,7 @@
 .chatpage {
   width: 100%;
   max-width: 67.5rem;
-  margin: 3.5rem 0.5rem;
+  margin: 4rem 0.5rem;
 
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@
   background-color: #0744293b;
   padding: 1rem;
 
-  border-radius: 20px;
+  border-radius: 12px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.5);
   background-color: #ffffff;
 }
@@ -18,6 +18,7 @@
 .hiddenlink {
   position: fixed;
   z-index: -1;
+  opacity: 0;
 }
 
 .pop_msg {
@@ -164,6 +165,14 @@
 }
 
 .right_top_leave {
+  display: block;
+}
+.right_top_hamburger {
+  display: none;
+}
+
+.right_top_leave,
+.right_top_hamburger {
   margin-left: 1.5rem;
   outline: none;
   border: none;
@@ -174,9 +183,11 @@
   text-align: center;
   cursor: pointer;
   transition: all 150ms ease-in;
+  color: #363636;
 }
 
-.right_top_leave:hover {
+.right_top_leave:hover,
+.right_top_hamburger:hover {
   background: #dedede;
   transform: scale(1.02);
   opacity: 0.8;
@@ -199,7 +210,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 
 .chat_nickname {
@@ -211,6 +222,8 @@
 
 .chat_left_bubble,
 .chat_right_bubble {
+  flex: 0 1 auto;
+
   margin-top: 0.25rem;
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
@@ -237,6 +250,8 @@
 }
 
 .chat_time {
+  flex: 0 0 auto;
+
   font-size: 0.625rem;
   letter-spacing: 0.25px;
   color: #636363;
@@ -327,4 +342,77 @@
 .right_input_btn:hover {
   opacity: 0.8;
   transform: scale(1.02);
+}
+
+/* mobile */
+@media screen and (max-width: 30rem) {
+  .chatpage {
+    /* margin: 2rem 0.5rem 0rem 0.5rem; */
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  .left_section {
+    display: none;
+  }
+
+  .left_nickname_container {
+    height: 3rem;
+  }
+  .text_h3 {
+    font-size: 1rem;
+  }
+
+  .right_section {
+    margin: 0;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    border-radius: 0;
+  }
+
+  .rignt_input_container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .right_top {
+    height: 2.5rem;
+    padding: 0 0.5rem;
+  }
+  .right_top_title {
+    font-size: 1rem;
+  }
+
+  /* Hamburger btn : Leave btn */
+  .right_top_leave {
+    display: none;
+  }
+  .right_top_hamburger {
+    display: block;
+  }
+
+  .right_messages_container {
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+  }
+  .rignt_input_container {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+  }
+
+  .right_input_btn {
+    margin-left: 0.5rem;
+    width: 4rem;
+  }
+
+  .chat_left {
+    padding-right: 0rem;
+  }
+
+  .chat_right {
+    padding-left: 0rem;
+  }
+
+  .pop_msg.on {
+    top: 1rem;
+    opacity: 0.4;
+  }
 }

@@ -7,15 +7,15 @@
   align-items: center;
 
   max-width: 42rem;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 .gohome_container {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 4rem;
 }
 .gohome {
+  margin-bottom: 5rem;
   padding: 0.4rem 0.8rem;
   font-size: 1rem;
   text-decoration: none;
@@ -32,7 +32,7 @@
 
 .title {
   margin: 3rem 0 0 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 1.2px;
   color: #ffffff;
@@ -47,10 +47,14 @@
   color: #ffffff;
   margin: 0;
 }
+
+.user_count {
+  margin-top: 4rem;
+}
 .center_container {
   width: 100%;
   max-width: 28rem;
-  padding: 5rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +73,7 @@
   border: solid 1px #ffffff;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  color: #0c5764;
+  color: #0c5764ce;
 }
 
 .input::placeholder {
@@ -103,4 +107,34 @@
 .join_btn.isValid:hover {
   cursor: pointer;
   transform: scale(1.02);
+}
+
+/* mobile */
+@media screen and (max-width: 30rem) {
+  .wait {
+    padding-bottom: 0;
+  }
+  .gohome {
+    position: fixed;
+    top: 1.25rem;
+    left: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .desc {
+    margin-top: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .user_count {
+    font-size: 1.25rem;
+  }
+
+  .input,
+  .join_btn {
+    font-size: 1rem;
+  }
 }
