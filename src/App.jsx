@@ -4,6 +4,7 @@ import PageContainer from './components/PageContainer';
 import MainPage from './pages/MainPage';
 import RoomPageRender from './pages/RoomPageRender';
 import PageNotFound from './pages/PageNotFound';
+import Footer from './components/Footer';
 
 function App({ authService, dbService }) {
   const [uid, setUid] = useState(null);
@@ -42,6 +43,7 @@ function App({ authService, dbService }) {
           <PageNotFound />
         </Switch>
       </PageContainer>
+      <Footer />
     </>
   );
 }

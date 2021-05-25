@@ -14,3 +14,35 @@ body {
   height: 100vh;
   background: black;
 }
+
+footer {
+  font-size: 0.75rem;
+  width: 100%;
+  bottom: 0.25rem;
+  text-align: center;
+  position: fixed;
+  color: white;
+}
+
+.footer_btns {
+  font-size: 1rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer_link {
+  margin: 0.25rem 0.5rem;
+  color: #ffffff;
+  transition: all 250ms ease-in;
+}
+.footer_link:hover {
+  color: #00a389;
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 34rem) {
+  footer {
+    display: none;
+  }
+}
