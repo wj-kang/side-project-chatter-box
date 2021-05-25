@@ -27,7 +27,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 34rem) {
   .container {
     padding-top: 5rem;
   }

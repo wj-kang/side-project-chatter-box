@@ -7,7 +7,7 @@
   align-items: center;
 
   max-width: 42rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 .gohome_container {
   width: 100%;
@@ -17,7 +17,7 @@
 .gohome {
   margin-bottom: 5rem;
   padding: 0.4rem 0.8rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-decoration: none;
   color: #ffffff;
   border-radius: 8px;
@@ -110,7 +110,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 34rem) {
   .wait {
     padding-bottom: 0;
   }

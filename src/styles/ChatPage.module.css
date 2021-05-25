@@ -158,6 +158,8 @@
   text-align: center;
   cursor: pointer;
   transition: all 150ms ease-in;
+  font-size: 1rem;
+  color: #00a389;
 }
 
 .right_top_linkcopy:hover {
@@ -345,12 +347,10 @@
 }
 
 /* mobile */
-@media screen and (max-width: 30rem) {
+@media screen and (max-width: 34rem) {
   .chatpage {
-    /* margin: 2rem 0.5rem 0rem 0.5rem; */
-    margin: 0;
+    margin-top: 1rem;
     padding: 0;
-    border-radius: 0;
   }
   .left_section {
     display: none;
@@ -366,7 +366,10 @@
   .right_section {
     margin: 0;
     padding: 0.5rem 0.5rem 1rem 0.5rem;
-    border-radius: 0;
+  }
+
+  .chat_list {
+    padding-bottom: 2.5rem;
   }
 
   .rignt_input_container {
