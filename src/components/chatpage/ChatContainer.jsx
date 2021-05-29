@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styles from '../../styles/ChatPage.module.css';
 import ChatAnnouncement from './ChatAnnouncement';
 import ChatBubbleLeft from './ChatBubbleLeft';
 import ChatBubbleRight from './ChatBubbleRight';
+import styles from '../../styles/ChatPage.module.css';
 
 const ChatContainer = ({ dbService, uid, roomId }) => {
   const [msgs, setMsgs] = useState(null);

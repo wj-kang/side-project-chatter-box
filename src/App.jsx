@@ -31,6 +31,7 @@ function App({ authService, dbService }) {
             path="/"
             children={<MainPage dbService={dbService} />}
           />
+
           <Route //
             path="/room/:roomId"
             children={
@@ -40,6 +41,7 @@ function App({ authService, dbService }) {
               />
             }
           />
+
           <PageNotFound />
         </Switch>
       </PageContainer>

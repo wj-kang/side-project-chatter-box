@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# **Mini Project**</BR> **💬 Chatter Box** **(https://chatterbox.wonjunkang.com)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Enjoy truly simple open-chat
 
-## Available Scripts
+Create your own chat link, and invite others!
 
-In the project directory, you can run:
+</br>
 
-### `yarn start`
+<img src="https://user-images.githubusercontent.com/68088596/120076318-8e377e80-c06a-11eb-82df-1e3a5477d6cc.png" width="100%" />
+<img src="https://user-images.githubusercontent.com/68088596/120076292-78c25480-c06a-11eb-94c9-8a3af6b1dee6.png" width="100%"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</br></br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# **👨🏻‍💻 Motive**
 
-### `yarn test`
+I looked at Google `Firebase` with a curiosity about a server-less application, and it was interesting that these features could be used without writing any server code.
+Seeing that `Real-time Database` can be utilized to implement real-time chat without writing server code, I wanted to try it to create a chat app myself.</br>
+ChatterBox is simple web application that you can create a chatroom link and share the link with others to enjoy live chat together. it was implemented based on `React` and `Firebase` and was deployed using AWS `S3` static hosting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</br></br>
 
-### `yarn build`
+# **📚 Stacks**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Front-end :**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](https://img.shields.io/badge/frontend-JAVASCRIPT-ffed26?style=for-the-badge&logo=javascript)</br>
+![](https://img.shields.io/badge/frontend-react-26eeff?style=for-the-badge&logo=react)</br>
+![](https://img.shields.io/badge/FIREBASE--SDK-FFA444?style=for-the-badge&logo=firebase)
+![](https://img.shields.io/badge/realtime--db-ffb757?style=for-the-badge)
+![](https://img.shields.io/badge/Auth-ffb757?style=for-the-badge)</br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Deploy :**
 
-### `yarn eject`
+![](https://img.shields.io/badge/s3-232f3e?style=for-the-badge&logo=amazon)
+![](https://img.shields.io/badge/cloudfront-232f3e?style=for-the-badge)
+![](https://img.shields.io/badge/route53-232f3e?style=for-the-badge)</br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+</br></br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# 📸 **Screenshots**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img src="https://user-images.githubusercontent.com/68088596/120076339-a4ddd580-c06a-11eb-9536-35f39c7f5d52.gif" width="32.5%"> <img src="https://user-images.githubusercontent.com/68088596/120076341-a7402f80-c06a-11eb-88fd-5ac8707f498a.gif" width="32.5%"/> <img src="https://user-images.githubusercontent.com/68088596/120076345-a909f300-c06a-11eb-993a-caf5497d7e59.gif" width="32.5%"></br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="https://user-images.githubusercontent.com/68088596/120076349-adcea700-c06a-11eb-9e5b-1fe3c80d15cd.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076350-ae673d80-c06a-11eb-96b3-552e9a4f41fb.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076351-ae673d80-c06a-11eb-8376-783c49db4458.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076352-ae673d80-c06a-11eb-9ce4-8a3e10f31506.png" width="24%"/>
 
-## Learn More
+</br></br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</br>
