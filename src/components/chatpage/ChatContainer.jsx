@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import ChatAnnouncement from './ChatAnnouncement';
 import ChatBubbleLeft from './ChatBubbleLeft';
 import ChatBubbleRight from './ChatBubbleRight';
@@ -7,9 +7,9 @@ import styles from '../../styles/ChatPage.module.css';
 const ChatContainer = ({ dbService, uid, roomId }) => {
   const [msgs, setMsgs] = useState(null);
 
-  const syncMsgData = () => {
+  const syncMsgData = useCallback(() => {
     dbService.syncMessageData(roomId, uid, setMsgs);
-  };
+  }, []);
 
   const timeConvert = (timestamp) => {
     const time = new Date(timestamp);
@@ -22,10 +22,10 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
   };
 
   const chatContainer = useRef();
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     const scrollValue = chatContainer.current.scrollHeight - chatContainer.current.clientHeight;
     chatContainer.current.scrollTo(0, scrollValue);
-  };
+  }, []);
 
   useEffect(() => {
     syncMsgData();
@@ -67,4 +67,4 @@ const ChatContainer = ({ dbService, uid, roomId }) => {
   );
 };
 
-export default ChatContainer;
+export default React.memo(ChatContainer);

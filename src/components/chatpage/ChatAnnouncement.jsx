@@ -19,4 +19,4 @@ const ChatAnnouncement = ({ nickname, type }) => {
   );
 };
 
-export default ChatAnnouncement;
+export default React.memo(ChatAnnouncement);

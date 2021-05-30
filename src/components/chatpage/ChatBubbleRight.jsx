@@ -14,4 +14,4 @@ const ChatBubbleRight = ({ msg, time }) => {
   );
 };
 
-export default ChatBubbleRight;
+export default React.memo(ChatBubbleRight);

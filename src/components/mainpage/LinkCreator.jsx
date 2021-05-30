@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from '../../styles/MainPage.module.css';
 
@@ -8,9 +8,9 @@ const LinkCreator = ({ dbService, setPopMsg }) => {
   const [copied, setCopied] = useState(false);
   const [roomId, setRoomId] = useState('');
 
-  const handleCreateRoom = () => {
+  const handleCreateRoom = useCallback(() => {
     dbService.createNewChat(setRoomId, setCreated);
-  };
+  }, []);
 
   const handleCopyLink = () => {
     document.getElementById('link').select();
@@ -61,4 +61,4 @@ const LinkCreator = ({ dbService, setPopMsg }) => {
   );
 };
 
-export default LinkCreator;
+export default React.memo(LinkCreator);

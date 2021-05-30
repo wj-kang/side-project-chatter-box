@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import UserList from './UserList';
 import styles from '../../styles/Sidebar.module.css';
 import chatStyles from '../../styles/ChatPage.module.css';
 
 const Sidebar = ({ isSidebarOpen, roomsInfo, nickname, handleLeaveChat, setSidebarOpen }) => {
-  const handleSidebarLeaveBtn = () => {
+  const handleSidebarLeaveBtn = useCallback(() => {
     handleLeaveChat();
-  };
+  }, []);
 
   const handleClickBackground = (e) => {
     if (e.target.id === 'background') {
@@ -45,4 +45,4 @@ const Sidebar = ({ isSidebarOpen, roomsInfo, nickname, handleLeaveChat, setSideb
   );
 };
 
-export default Sidebar;
+export default React.memo(Sidebar);

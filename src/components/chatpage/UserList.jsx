@@ -18,4 +18,4 @@ const UserList = ({ roomsInfo }) => {
   );
 };
 
-export default UserList;
+export default React.memo(UserList);

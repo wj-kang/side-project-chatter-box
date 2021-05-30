@@ -15,4 +15,4 @@ const ChatBubbleLeft = ({ nickname, msg, time }) => {
   );
 };
 
-export default ChatBubbleLeft;
+export default React.memo(ChatBubbleLeft);

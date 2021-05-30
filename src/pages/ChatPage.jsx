@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import ChatContainer from '../components/chatpage/ChatContainer';
 import ChatInput from '../components/chatpage/ChatInput';
 import Sidebar from '../components/chatpage/Sidebar';
@@ -14,12 +14,13 @@ const ChatPage = ({ dbService, uid, roomId, roomsInfo }) => {
     dbService.newMessage(roomId, uid, nickname, msg);
   };
 
-  const handlePopMsg = () => {
+  const handlePopMsg = useCallback(() => {
     setPopMsg(true);
     setTimeout(() => {
       setPopMsg(false);
     }, 1500);
-  };
+  }, []);
+
   const handleCopyLinkBtn = () => {
     document.getElementById('link').select();
     document.execCommand('copy');

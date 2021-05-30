@@ -49,4 +49,4 @@ const WaitPage = ({ handleJoinChat, userCount }) => {
   );
 };
 
-export default WaitPage;
+export default React.memo(WaitPage);
