@@ -7,8 +7,10 @@ const LinkCreator = ({ dbService, setPopMsg }) => {
   const [created, setCreated] = useState(false);
   const [copied, setCopied] = useState(false);
   const [roomId, setRoomId] = useState('');
+  const [isLoading, setLoading] = useState(false);
 
   const handleCreateRoom = useCallback(() => {
+    setLoading(true);
     dbService.createNewChat(setRoomId, setCreated);
   }, []);
 
@@ -32,7 +34,11 @@ const LinkCreator = ({ dbService, setPopMsg }) => {
   return (
     <div className={styles.section_container}>
       <button className={`${styles.create_btn} ${created && styles.created}`} onClick={handleCreateRoom}>
-        Create Chat Link
+        {isLoading ? ( //
+          <div className={styles.loader}></div>
+        ) : (
+          `Create Chat Link`
+        )}
       </button>
 
       <div className={`${styles.link_container} ${created && styles.created} `}>
