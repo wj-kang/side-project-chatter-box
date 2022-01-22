@@ -1,4 +1,4 @@
-# **Mini Project**</BR> **💬 Chatter Box** **(https://chatterbox.wonjunkang.com)**
+# **Chatter Box** **(https://chatterbox.wonjunkang.com)**
 
 Simple open-chat web application</br>
 Create your own chat link, and invite others!
