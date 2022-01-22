@@ -1,18 +1,17 @@
-# **Chatter Box** **(https://chatterbox.wonjunkang.com)**
+# **💬 Chatter Box** **</br>https://chatterbox.wonjunkang.com**
 
-Simple open-chat web application</br>
-Create your own chat link, and invite others!
+### Create your own chat link, and invite others!
 
 </br>
 
 # **👨🏻‍💻 About**
 
-### This is an individual side project to practice and improve my web development knowledge.
+### This is an individual side project to practice and improve my web development knowledge.</br>ChatterBox is a simple open-chat web application.
 
-- Implemented a real-time chat application utilizing a `Firebase SDK` with its real-time database service.
+- Implemented a real-time chat application utilizing a [`Firebase SDK`](https://firebase.google.com/?gclid=CjwKCAiA866PBhAYEiwANkIneERdGeWsU_42PDtGy3Rv7KEdo-gX9sW5pl4gnUYPOzxoGTye3PG7kBoCh8UQAvD_BwE&gclsrc=aw.ds) with its real-time database service.
 - User can create own chatroom link, and anyone who has the link can join that room.
 
-</br></br>
+</br>
 
 # **📚 Stacks**
 
@@ -35,11 +34,11 @@ Create your own chat link, and invite others!
 ![](https://img.shields.io/badge/cloudfront-232f3e?style=for-the-badge)
 ![](https://img.shields.io/badge/route53-232f3e?style=for-the-badge)</br>
 
-</br></br>
+</br>
 
 <!-- <img src="https://user-images.githubusercontent.com/68088596/120076318-8e377e80-c06a-11eb-82df-1e3a5477d6cc.png" width="100%" /> -->
 
-</br></br>
+</br>
 
 # 📸 **Screenshots**
 
@@ -47,7 +46,7 @@ Create your own chat link, and invite others!
 
 <img src="https://user-images.githubusercontent.com/68088596/120076349-adcea700-c06a-11eb-9e5b-1fe3c80d15cd.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076350-ae673d80-c06a-11eb-96b3-552e9a4f41fb.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076351-ae673d80-c06a-11eb-8376-783c49db4458.png" width="24%"/> <img src="https://user-images.githubusercontent.com/68088596/120076352-ae673d80-c06a-11eb-9ce4-8a3e10f31506.png" width="24%"/>
 
-</br></br>
+</br>
 
 ---
 
