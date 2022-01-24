@@ -1,12 +1,14 @@
 # **💬 Chatter Box** **</br>https://chatterbox.wonjunkang.com**
 
-### Create your own chat link, and invite others!
+### ChatterBox is a simple open-chat web application.
 
 </br>
 
 # **👨🏻‍💻 About**
 
-### This is an individual side project to practice and improve my web development knowledge.</br>ChatterBox is a simple open-chat web application.
+### This is a personal project to practice and improve my web development knowledge.
+
+</br>
 
 - Implemented a real-time chat application utilizing a [`Firebase SDK`](https://firebase.google.com/?gclid=CjwKCAiA866PBhAYEiwANkIneERdGeWsU_42PDtGy3Rv7KEdo-gX9sW5pl4gnUYPOzxoGTye3PG7kBoCh8UQAvD_BwE&gclsrc=aw.ds) with its real-time database service.
 - User can create own chatroom link, and anyone who has the link can join that room.
@@ -50,4 +52,4 @@
 
 ---
 
-</br>
+### **💬 Chatter Box** **</br>https://chatterbox.wonjunkang.com**
